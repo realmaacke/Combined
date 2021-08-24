@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="themes/styles/login.css">
-    <title>Combined Login</title>
+    <link rel="stylesheet" href="themes/styles/register.css">
+    <title>Combined Register</title>
 </head>
 <body>
 
@@ -33,7 +33,7 @@
                 <div class="col-sm">
                     <div class="left">
                     <div class="logo-class">
-                               <h1>Combined</h1>
+                               <h1>Register!</h1>
                     </div>
                     <div class="under-text">
                              <h4>All of your favorite platforms functions built into one!</h4>
@@ -45,26 +45,20 @@
                         <div class="box">
                             <input type="text" name="username" placeholder="Enter Username">
                             <input type="password" name="password" placeholder="Enter Password">
+                            <input type="password" name="password" placeholder="Reapeat Password">
 
-                            <input type="button" value="Log In">
+                            <input type="button" value="Register">
 
-                            <a href="forgot.php"> Forgot your password ?</a>
-                            <div class="Line"></div>
-
-                            <input type="button" id="register" value="Register">
+                            <input type="button" id="login" value="login">
                         </div>
             </div>
         </div>
-        <div class="made">
-        <h1>Marcus Pettersson :D</h1>
-    </div>
     </div>
 </div>
 
-<script>
-
-$('#register').click(function() {
-    setTimeout(function () { location.href='register.php'; }, 1200);
+<script> 
+$('#login').click(function() {
+    setTimeout(function () { location.href='login.php'; }, 1200);
     var element = document.getElementById("animate");
      element.classList.add("switch");
     $(this).unbind();
