@@ -1,0 +1,121 @@
+/* General CSS */
+body {
+    background-color: rgb(19, 19, 19);
+}
+
+.content{
+    margin: 10%  auto;
+    width: 60%;
+    height: 60%;
+}
+
+/* Left side */
+.Logo-class {
+    float: left;
+    padding-top: 120px;
+}
+
+.Logo-class h1 {
+    float: left;
+    color: rgb(115, 223, 160);
+    font-size: 5.6em;
+    text-decoration: white underline;
+}
+
+
+.under-text{
+    padding-left: 30px;
+}
+
+.under-text h4{
+    color: rgb(115, 223, 160);
+}
+
+/* Right side */
+
+.box{
+    float: right;
+    margin-right: 80px;
+    margin-top: 80px;
+    width: 420px;
+    height: 420px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px rgb(115, 223, 160), -1em 0 .4em rgb(115, 223, 160);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.box a {
+    margin-left: 110px;
+}
+
+
+.box input[type=text]{
+    border-radius: 12px;
+    border: 1px solid rgb(77, 77, 77);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.box input[type=password]{
+    border-radius: 12px;
+    border: 1px solid rgb(77, 77, 77);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.box input[type=button]{
+    background-color: rgb(115, 223, 160);
+    border-radius: 12px;
+    border: 1px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.Line {
+    margin: 20px auto;
+    width: 90%;
+    height: 2px;
+    background-color: rgb(224, 224, 224);
+}
+
+
+/* Animation on loggin */
+
+@keyframes Slide_right{
+    0%{
+        transform:translate(800px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes Slide_left{
+    0%{
+        transform:translate(-800px);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes loggin{
+    0%{
+        transform:translate(0);
+    }
+    100%{
+        transform: translate(-2200px);
+    }
+}
+
+.box{
+    animation: Slide_right 1.4s ease;
+}
+
+.Left{
+    animation: Slide_left 1.4s ease;
+}
