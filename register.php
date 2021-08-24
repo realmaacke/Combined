@@ -1,4 +1,60 @@
-<?php include 'themes/CDN.php'; ?>
+<?php 
+include 'themes/CDN.php';
+require_once 'core/init.php';
+
+if(Input::exists()){
+  if(Token::check(Input::get('token'))) {
+  $validate = new Validate();
+  $validation = $validate->check($_POST, array(
+      'username' => array(
+          'required' => true,
+          'min' => 6,
+          'max' => 20,
+          'unique' => 'users'
+      ),
+      'password' => array(
+        'required' => true,
+        'min' => 6,
+      ),
+      'password_again' => array(
+        'required' => true,
+        'matches' => 'password'
+      ),
+      'name' => array(
+        'required' => true,
+        'min' => 2,
+        'max' => 50
+      ),
+  ));
+
+  if($validation->passed()){
+    $user = new User();
+
+    try{
+
+      $user->create(array(
+        'username' => Input::get('username'),
+        'password' => Hash::make(Input::get('password')),
+        'name' => Input::get('name'),
+        'joined' => date('Y-m-d H:i:s'),
+        'group' => 1
+      ));
+
+      Session::flash('home', 'You have been registered and can now log in!');
+      Redirect::to("index.php");
+
+    }catch(Exception $e) {
+      die($e->getMessage());
+    }
+  }
+  else{
+    foreach($validation->errors() as $error){
+      echo '<div style="color: red;">', $error, '</div> <br>';
+    }
+  }
+}
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,16 +99,21 @@
                     <div class="col-sm"> </div>
                 <div class="col-sm">
                         <div class="box">
-                            <input type="text" name="username" placeholder="Enter Username">
-                            <input type="password" name="password" placeholder="Enter Password">
-                            <input type="password" name="password" placeholder="Reapeat Password">
+                            <form action="" method="post">
+                                    <input type="text" name="username" id="username" placeholder="Enter Username" value="<?php echo escape(Input::get('username')); ?>" autocomplete="off">
+                                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                                    <input type="password" name="password_again" id="password_again" placeholder="Reapeat Password">
+                                    <input type="text" name="name" placeholder="Enter your Name" value="<?php echo escape(Input::get('name')); ?>" id="name">
 
-                            <input type="button" value="Register">
-
-                            <input type="button" id="login" value="login">
+                                    <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+                                    <input type="submit" style="" class="submitBTN" name="" value="Register">
+                            </form>
                         </div>
             </div>
         </div>
+        <div class="made">
+        <a href="login.php"><i class="fas fa-arrow-left"></i>  Back to Login </a>
+    </div>
     </div>
 </div>
 

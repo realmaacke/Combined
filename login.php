@@ -1,5 +1,33 @@
-<?php include 'themes/CDN.php'; ?>
+<?php include 'themes/CDN.php';
 
+require_once 'core/init.php';
+if(Input::exists()){
+  if(Token::check(Input::get('token'))) {
+    $validate = new Validate();
+    $validation = $validate->check($_POST, array(
+      'username' => array('required' => true),
+      'password' => array('required' => true)
+    ));
+
+    if($validation->passed()){
+      $user = new User();
+      $login = $user->login(Input::get('username'), Input::get('password'));
+
+      if($login){
+        Redirect::to('index.php');
+      } else {
+        echo "Login Failed :/ <br>";
+      }
+
+    } else{
+      foreach($validation->errors() as $error){
+        echo $error, '<br>';
+      }
+    }
+
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +38,6 @@
     <title>Combined Login</title>
 </head>
 <body>
-
 <style> 
 /* Animation when clicking on Register */
 .switch{
@@ -25,7 +52,6 @@
     }
 }
 </style>
-
 
 <div class="content">
     <div class="container" id ="animate">
@@ -43,11 +69,12 @@
                     <div class="col-sm"> </div>
                 <div class="col-sm">
                         <div class="box">
-                            <input type="text" name="username" placeholder="Enter Username">
-                            <input type="password" name="password" placeholder="Enter Password">
-
-                            <input type="button" value="Log In">
-
+                            <form action="" method="post">
+                                    <input type="text" name="username" id="username" placeholder="Enter Username" autocomplete="off">
+                                    <input type="password" name="password" id="password" placeholder="Enter Password" autocomplete="off">
+                                    <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+                                    <input type="submit" style="" class="submitBTN" name="" value="Login">
+                            </form>
                             <a href="forgot.php"> Forgot your password ?</a>
                             <div class="Line"></div>
 

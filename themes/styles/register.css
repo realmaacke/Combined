@@ -74,7 +74,16 @@ body {
     width: 100%;
 }
 
-.box input[type=button]{
+.submitBTN{
+    background-color: rgb(115, 223, 160);
+    border-radius: 12px;
+    border: 1px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+ input[type=submit] {
     background-color: rgb(115, 223, 160);
     border-radius: 12px;
     border: 1px;

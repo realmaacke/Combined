@@ -1,6 +1,15 @@
-<?php include 'themes/CDN.php'; 
+<?php 
+include 'themes/CDN.php';
+require_once 'core/init.php';
 
-  header('Location: login.php');
+if(Session::exists('home')){
+  echo '<p>'. Session::flash('home') .'<p>';
+}
+
+$user = new User();
+if(!$user->isLoggedIn()){
+  
+} 
 ?>
 
 <!DOCTYPE html>
