@@ -2,6 +2,12 @@
 include 'themes/CDN.php';
 require_once 'core/init.php';
 
+$user = new User();
+if($user->isLoggedIn()){
+  Redirect::to("index.php");
+} 
+
+
 if(Input::exists()){
   if(Token::check(Input::get('token'))) {
   $validate = new Validate();
@@ -39,8 +45,6 @@ if(Input::exists()){
         'joined' => date('Y-m-d H:i:s'),
         'group' => 1
       ));
-
-      Session::flash('home', 'You have been registered and can now log in!');
       Redirect::to("index.php");
 
     }catch(Exception $e) {

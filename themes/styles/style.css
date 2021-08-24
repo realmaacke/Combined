@@ -1,0 +1,7 @@
+:root{
+    --bs-green: rgb(115, 223, 160);
+    --bshadow: 2.5px 2.5px rgb(115, 223, 160), -2.5px -2.5px rgb(115, 223, 160);
+    --bs-black: rgb(19, 19, 19);
+
+    --mar-top: 4%;
+}

@@ -1,6 +1,12 @@
 <?php include 'themes/CDN.php';
-
 require_once 'core/init.php';
+
+$user = new User();
+if($user->isLoggedIn()){
+  Redirect::to("index.php");
+} 
+
+
 if(Input::exists()){
   if(Token::check(Input::get('token'))) {
     $validate = new Validate();
@@ -16,12 +22,12 @@ if(Input::exists()){
       if($login){
         Redirect::to('index.php');
       } else {
-        echo "Login Failed :/ <br>";
+        echo '<div style="color: red;"> Log in Failed :/ </div> <br>';
       }
 
     } else{
       foreach($validation->errors() as $error){
-        echo $error, '<br>';
+        echo '<div style="color: red;">', $error, '</div> <br>';
       }
     }
 
