@@ -30,5 +30,17 @@ if(!$user->isLoggedIn()){
   include 'navigation.php';
   ?>
 
+  <div class="Content">
+
+  <div class="TopContent">
+      <form action="" method="post">
+        <input type="text" name="" placeholder="Search" id="">
+      </form>
+  </div>
+
+  </div>
+
+
+
   </body>
 </html>

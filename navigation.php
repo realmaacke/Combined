@@ -65,6 +65,10 @@ ul {
          <li><a href="profile.php">Profile <i class="far fa-user"></i> </a></li>
          <li><a href="#">|</a></li>
          <li><a href="#">Friends <i class="fas fa-users"></i> </a></li>
+         <?php if($user->data()->id == 1){ ?>
+             <li><a href="#">|</a></li>
+             <li><a href="todo.php">TODO List </a></li>
+        <?php } ?>
       </div>
     </ul>
   </div>

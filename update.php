@@ -73,7 +73,7 @@ if(Input::exists()) {
     </div>
     </div>
     <div class="picChange">
-
+        <a href="changepassword.php">Change Password</a>
     </div>
 
 </div>

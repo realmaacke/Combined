@@ -43,3 +43,33 @@ ul {
     text-decoration: none;
     color: rgb(40, 93, 62);
 }
+
+
+
+
+.content{
+  height: 100%;
+}
+
+
+.TopContent{
+  margin: auto;
+  width: 98%;
+  height: 10%;
+  padding-left: 30%;
+  padding-top: 1%;
+  overflow: hidden;
+}
+
+
+.TopContent input{
+  float:left;
+  text-align: center;
+  margin: 0  auto;
+  width: 600px;
+  height: 60%;
+  background-color: rgb(19, 19, 19);
+  border: 1px solid rgb(115, 223, 160);
+  border-radius: 10px;
+  color:white;
+}
