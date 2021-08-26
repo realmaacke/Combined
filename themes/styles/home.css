@@ -1,0 +1,45 @@
+/* General CSS */
+body {
+    background-color: rgb(19, 19, 19);
+}
+
+/* Navigation CSS */
+.nav-wrapper{
+  list-style-type: none;
+  margin: 1%;
+  padding: 0;
+  height: 6%;
+  overflow: hidden;
+  background-color: rgb(19, 19, 19);
+  border: 1px solid rgb(115, 223, 160);
+  border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  
+ .left li {
+    float: left;
+}
+
+.right li {
+    float: right;
+}
+  
+  li a {
+    display: block;
+    color: rgb(115, 223, 160);
+    text-align: center;
+    padding: 20px 18px;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+  
+  li a:hover {
+    text-decoration: none;
+    color: rgb(40, 93, 62);
+}

@@ -1,4 +1,5 @@
 <?php 
+
 include 'themes/CDN.php';
 require_once 'core/init.php';
 
@@ -10,6 +11,7 @@ $user = new User();
 if(!$user->isLoggedIn()){
   Redirect::to("login.php");
 } 
+
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +21,14 @@ if(!$user->isLoggedIn()){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="themes/styles/home.css">
+    <link rel="stylesheet" href="themes/styles/style.css">
     <title>Combined Home</title>
   </head>
   <body>
 
-  <a href="profile.php">Profile</a>
+  <?php 
+  include 'navigation.php';
+  ?>
 
   </body>
 </html>

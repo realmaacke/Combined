@@ -18,6 +18,9 @@ if(!$user->isLoggedIn()){
 </head>
 <body>
 
+<?php 
+  include 'navigation.php';
+  ?>
 
 <div class="outer-container">
     <div class="content">
@@ -41,8 +44,7 @@ if(!$user->isLoggedIn()){
                     <li><a href="update.php" >Settings <i class="fas fa-cog"></i></a></li>
                     <li><a href="">Achivements <i class="fas fa-medal"></i></a></li>
                     <li><a href="">Friends <i class="fas fa-users"></i></a></li>
-                    <li><a href="">Add Friend <i class="fas fa-plus"></i></a></li>
-                    <li><a href="logout.php">Sign out <i class="fas fa-sign-out-alt"></i></a></li>
+                    <li><a href="">Friends <i class="fas fa-plus"></i></a></li>
                 </ul>
             </div>
         </div>
