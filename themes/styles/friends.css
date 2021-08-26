@@ -1,7 +1,4 @@
 html, body { font-family: arial, sans-serif; }
-.ok, .nok { padding: 5px; }
-.ok { background: #d7ffe7; }
-.nok { background: #ffd7d7; }
 #userNow { font-weight: bold; }
 #userList { max-width: 400px; }
 .urow {

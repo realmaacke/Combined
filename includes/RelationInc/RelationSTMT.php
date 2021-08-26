@@ -17,5 +17,4 @@ if (isset($_POST['req'])) {
       // (B6) UNBLOCK
       case "unblock": $pass = $REL->block($uid, $_POST['id'], false); break;
     }
-    echo $pass ? "<div class='ok'>OK</div>" : "<div class='nok'>{$REL->error}</div>";
   }

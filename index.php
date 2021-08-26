@@ -32,7 +32,11 @@ if(!$user->isLoggedIn()){
 
   <div class="Content">
 
-
+  <?php
+  
+  include 'friends.php';
+  
+  ?>
 
 
 

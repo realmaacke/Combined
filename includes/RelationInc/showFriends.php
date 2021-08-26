@@ -2,24 +2,22 @@
 
 $users = $REL->getUsers(); ?>
 
-
-<div id="userNow">You are now <?=$users[$uid]?>.</div>
 <div id="userList"><?php
   $requests = $REL->getReq($uid);
   $friends = $REL->getFriends($uid);
   foreach ($users as $id=>$name) { if ($id != $uid) {
     echo "<div class='urow'>";
-    // (C1) USER ID & NAME
-    echo "<div class='uname'>$id) $name</div>";
+    // USER ID & NAME
+    echo "<div class='uname'> $name</div>";
  
-    // (C2) BLOCK/UNBLOCK
+    // BLOCK/UNBLOCK
     if (isset($friends['b'][$id])) {
       echo "<button onclick=\"relate('unblock', $id)\">Unblock</button>";
     } else {
       echo "<button onclick=\"relate('block', $id)\">Block</button>";
     }
  
-    // (C3) FRIEND STATUS
+    // FRIEND STATUS
     // FRIENDS
     if (isset($friends['f'][$id])) { 
       echo "<button onclick=\"relate('unfriend', $id)\">Unfriend</button>";
@@ -48,4 +46,4 @@ $users = $REL->getUsers(); ?>
 
 <!-- css and scripts for buttons -->
 <link rel="stylesheet" href="themes/styles/friends.css">
-<script src="themes/friends.js"></script>
+<script src="js/friends.js"></script>
