@@ -32,33 +32,12 @@ if(!$user->isLoggedIn()){
 
   <div class="Content">
 
-  <div class="TopContent">
-        <input type="text" name="names" placeholder="Search" id="search">
-  </div>
-  <div id="show_up"></div>
+
+
+
 
 </div>
 
-
-
 </body>
 </html>
-
-
-<script>
-$(document).ready(function(e){
-	$("#search").keyup(function(){
-		$("#show_up").show();
-		var text = $(this).val();
-		$.ajax({
-			type: 'GET',
-			url: 'search.php',
-			data: 'txt=' + text,
-			success: function(data){
-				$("#show_up").html(data);
-			}
-		});
-	})
-});
-</script>
 

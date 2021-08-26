@@ -80,4 +80,13 @@ class User {
      return $this->_isLoggedIn;
    }
 
+
+   public function grabID(){
+      return $this->_data->id;
+   }
+
+   public function searchUsers(){
+
+   }
+
 }
