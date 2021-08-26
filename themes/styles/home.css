@@ -73,3 +73,16 @@ ul {
   border-radius: 10px;
   color:white;
 }
+
+
+#show_up{
+	width: 200px;
+	height: 200px;
+	border: 1px solid #ddd;
+	display: none;
+}
+#show_up a{
+	border-bottom: 1px solid #ddd;
+	display: block;
+	padding: 5px;
+}
