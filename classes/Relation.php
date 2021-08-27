@@ -142,7 +142,7 @@ class Relation {
     return $req;
   }
 
-  // GET FRIENDS & FOES (BLOCKED)
+  // GET FRIENDS & BLOCKED
   function getFriends ($uid) {
     // GET FRIENDS
     $friends = ["f"=>[], "b"=>[]];
@@ -165,6 +165,19 @@ class Relation {
     $users = [];
     while ($row = $this->stmt->fetch()) { $users[$row['id']] = $row['name']; }
     return $users;
+  }
+
+  public static Function Testdef(){
+    $this->query("SELECT * FROM `users`");
+    $users = [];
+    while ($row = $this->stmt->fetch()) { $users[$row['id']] = $row['name']; }
+    return $users;
+  }
+
+  public static function checkIfFriends(){
+    $self = new User();
+    $selfId = $self->data()->id;
+    "SELECT * FROM `relations` WHERE `status`='F' AND `from`= $selfID";
   }
 }
 

@@ -6,6 +6,7 @@ if(!$user->isLoggedIn()){
   Redirect::to("login.php");
 } 
 
+$REL = new Relation();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,34 +23,17 @@ if(!$user->isLoggedIn()){
   include 'navigation.php';
   ?>
 
-<div class="outer-container">
-    <div class="content">
-        <div class="feed">
-            <h2 id="feed-Title">Title</h2>
-             <h5 id=feed-msg>Message</h5>
-             <div class="feed-line"></div>
-             <div class="feed-interactions">
-                    <button type="submit"><i class="far fa-heart"></i> 12</button>
-             </div>
-        </div>
+
+    <div class="UserFriendBox">
+        <?php
+        $testUser = new User(2);
+        echo $user->data()->id;
+        echo $REL->Testdef(2);
+        
+        ?>
     </div>
-    <div class="sidebar">
-        <div class="userInfo">
-                 <img src="img/avatar.png" id="avatar">
-                  <h2><?php echo $user->data()->name; ?></h2>
-                  <h4>Join date: <?php echo $user->data()->joined; ?></h4>
-            <div class="Line"></div>
-            <div class="Links">
-                <ul>
-                    <li><a href="update.php" >Settings <i class="fas fa-cog"></i></a></li>
-                    <li><a href="">Achivements <i class="fas fa-medal"></i></a></li>
-                    <li><a href="">Friends <i class="fas fa-users"></i></a></li>
-                    <li><a href="">Friends <i class="fas fa-plus"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 
 </body>
 </html>

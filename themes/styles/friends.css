@@ -1,11 +1,17 @@
-html, body { font-family: arial, sans-serif; }
-#userNow { font-weight: bold; }
+html, body {
+   font-family: arial, sans-serif;
+}
+#userNow {
+   font-weight: bold;
+}
 #userList { max-width: 400px; }
 .urow {
   display: flex;
   padding: 10px;
-  background: #f2f2f2;
-  border: 1px solid #ccc;
+  color: white;
+  background-color: rgb(19, 19, 19);
+  border-radius: 12px;
+  border: 1px solid rgb(115, 223, 160);
   margin-bottom: 5px;
 }
 .uname { width: 100%; }
@@ -13,7 +19,13 @@ html, body { font-family: arial, sans-serif; }
   width: 120px;
   padding: 5px;
   margin-left: 3px;
-  background: #3069d2;
+  background: #48d230;
+  border-radius: 8px;
   color: #fff;
   border: 0;
+}
+
+
+.urow button:hover {
+  background: #379b19;
 }
