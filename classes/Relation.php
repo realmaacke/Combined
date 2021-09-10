@@ -167,13 +167,6 @@ class Relation {
     return $users;
   }
 
-  public static Function Testdef(){
-    $this->query("SELECT * FROM `users`");
-    $users = [];
-    while ($row = $this->stmt->fetch()) { $users[$row['id']] = $row['name']; }
-    return $users;
-  }
-
   public static function checkIfFriends(){
     $self = new User();
     $selfId = $self->data()->id;
@@ -181,7 +174,7 @@ class Relation {
   }
 }
 
-// DATABASE SETTINGS - CHANGE TO YOUR OWN!
+// DATABASE SETTINGS
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'combined');
 define('DB_CHARSET', 'utf8');

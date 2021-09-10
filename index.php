@@ -1,5 +1,4 @@
 <?php 
-
 include 'themes/CDN.php';
 require_once 'core/init.php';
 

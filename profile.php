@@ -23,17 +23,5 @@ $REL = new Relation();
   include 'navigation.php';
   ?>
 
-
-    <div class="UserFriendBox">
-        <?php
-        $testUser = new User(2);
-        echo $user->data()->id;
-        echo $REL->Testdef(2);
-        
-        ?>
-    </div>
-
-
-
 </body>
 </html>

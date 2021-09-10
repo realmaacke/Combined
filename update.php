@@ -1,6 +1,7 @@
 <?php
 include 'themes/CDN.php';
 require_once 'core/init.php';
+include_once 'essential/mysqli.php';
 
 $user = new User();
 
@@ -72,9 +73,28 @@ if(Input::exists()) {
         <a href="profile.php"><i class="fas fa-arrow-left"></i>  Return to profile page </a>
     </div>
     </div>
-    <div class="picChange">
+    <!-- <div class="picChange">
         <a href="changepassword.php">Change Password</a>
-    </div>
+    </div> -->
+
+
+    <div class="profilePic">
+    <img src="" alt="">
+
+
+  </div>
+  <form action="pic.php" method="POST" enctype="multipart/form-data">
+
+  <input type="file" name="file">
+  <button type="submit" name="submit">Upload picture</button>
+
+</form>
+
+
+
+
+
+
 
 </div>
 

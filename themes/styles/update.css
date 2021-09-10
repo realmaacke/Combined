@@ -34,3 +34,8 @@ html {
     font-size: 1.8em;
     padding-top: 100%;
 }
+
+
+.profilePic{
+    float:right;
+}
